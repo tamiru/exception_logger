@@ -1,24 +1,24 @@
-require_relative "lib/exception_logger/version"
+$:.push File.expand_path("../lib", __FILE__)
 
-Gem::Specification.new do |spec|
-  spec.name        = "exception_logger"
-  spec.version     = ExceptionLogger::VERSION
-  spec.authors     = ["Tamiru Hailu"]
-  spec.email       = ["tamiruhailu@gmail.com"]
-  spec.homepage    = "https://github.com/tamiru/exception_logger" # replace with your actual homepage
-  spec.summary     = "A simple exception logger for Ruby applications." # replace with your actual summary
-  spec.description = "This gem provides a simple and easy-to-use exception logger for Ruby applications." # replace with your actual description
-  spec.license     = "MIT"
+# Maintain your gem's version:
+require "exception_logger/version"
 
-  spec.metadata["allowed_push_host"] = "http://mygemserver.com" # replace with your actual gem server
-  spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/tamiru/exception_logger" # replace with your actual source code URL
-  spec.metadata["changelog_uri"] = "https://github.com/tamiru/exception_logger/CHANGELOG.md" # replace with your actual changelog URL
+# Describe your gem and declare its dependencies:
+Gem::Specification.new do |s|
+  s.name        = "exception_logger"
+  s.version     = ExceptionLogger::VERSION
+  s.authors     = ["Ryan Cheung"]
+  s.email       = ["ryancheung.go@gmail.com"]
+  s.homepage    = "https://github.com/ryancheung/exception_logger"
+  s.summary     = "Log exceptions inside a database table. No avaliable with rails 3.2.x."
+  s.description = "It's evolved from the outdated version 0.11.1 and built with rails engine and is mountable."
 
-  spec.files = Dir.chdir(File.expand_path(__dir__)) do
-    Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
-  end
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.test_files = Dir["test/**/*"]
 
-  spec.add_dependency "rails", ">= 7.1.3.2"
-  spec.add_dependency "will_paginate", ">= 4.0"
+  s.add_dependency "rails", ">= 4.0.0"
+  # s.add_dependency "jquery-rails"
+
+  s.add_dependency 'will_paginate', '~> 3.0'
+  s.add_development_dependency "sqlite3"
 end

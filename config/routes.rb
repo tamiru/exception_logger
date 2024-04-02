@@ -1,4 +1,3 @@
-
 ExceptionLogger::Engine.routes.draw do
   # Exception Logger
   resources :logged_exceptions do

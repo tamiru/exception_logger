@@ -1,10 +1,9 @@
 module ExceptionLogger
   module LoggedExceptionsHelper
     def pretty_exception_date(exception)
-      exception.created_at
       if Date.today == exception.created_at.to_date
         if false # exception.created_at > Time.now - 4.hours
-          "#{time_ago_in_words(exception.created_at).gsub(/about /, "~ ")} agox"
+          "#{time_ago_in_words(exception.created_at).gsub(/about /,"~ ")} agox"
         else
           "Today, #{exception.created_at.strftime(Time::DATE_FORMATS[:exc_time])}"
         end
@@ -18,7 +17,7 @@ module ExceptionLogger
     end
 
     def listify(text)
-      list_items = text.scan(/^\s*\* (.+)/).map { |match| content_tag(:li, match.first) }
+      list_items = text.scan(/^\s*\* (.+)/).map {|match| content_tag(:li, match.first) }
       content_tag(:ul, list_items)
     end
 

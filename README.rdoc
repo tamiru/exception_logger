@@ -6,9 +6,12 @@ mount to any existing rails app.
 == Install
 
 Inside your Gemfile:
- 
-  gem "exception_logger", :github => "tamiru/exception_logger"
 
+  # Rails 4.1.x
+  gem "exception_logger", :github => "ryancheung/exception_logger"
+
+  # Rails 4.0.x
+  gem "exception_logger", :github => "ryancheung/exception_logger", tag: 'v0.1.0'
 
 and then run:
 
@@ -19,7 +22,7 @@ and then run:
 Please check if all those requirements are satisfied on your environment.
 
 * will_paginate >= 3.0.5 # (used for pagination)
-* rails >= 7.0.0
+* rails >= 4.0.0
 
 === Inside your ApplicationController:
 

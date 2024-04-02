@@ -1,7 +1,7 @@
-require "test_helper"
+require 'test_helper'
 
 class ExceptionLoggerTest < ActiveSupport::TestCase
-  test "it has a version number" do
-    assert ExceptionLogger::VERSION
+  test "truth" do
+    assert_kind_of Module, ExceptionLogger
   end
 end

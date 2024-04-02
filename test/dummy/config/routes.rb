@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  mount ExceptionLogger::Engine => "/exception_logger"
+
+  get "simulate/failure"
+
+  mount ExceptionLogger::Engine => "/logger"
 end

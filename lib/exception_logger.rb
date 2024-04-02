@@ -1,7 +1,7 @@
-require "exception_logger/version"
 require "exception_logger/engine"
 require "will_paginate"
 require 'ipaddr'
+
 module ExceptionLogger
   # Copyright (c) 2005 Jamis Buck
   #
@@ -68,9 +68,9 @@ module ExceptionLogger
     def log_exception(exception)
       deliverer = self.class.exception_data
       data = case deliverer
-             when nil    then {}
-             when Symbol then send(deliverer)
-             when Proc   then deliverer.call(self)
+               when nil    then {}
+               when Symbol then send(deliverer)
+               when Proc   then deliverer.call(self)
              end
 
       rails_filter_parameters = defined?(::Rails) ? ::Rails.application.config.filter_parameters : []
@@ -87,4 +87,3 @@ module ExceptionLogger
     end
   end
 end
-

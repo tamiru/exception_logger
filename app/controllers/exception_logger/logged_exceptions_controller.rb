@@ -1,6 +1,6 @@
 module ExceptionLogger
   class LoggedExceptionsController < ApplicationController
-    # layout 'exception_logger/application'
+    layout 'exception_logger/application'
 
     cattr_accessor :application_name
 
@@ -74,7 +74,7 @@ module ExceptionLogger
 
     def clear
       LoggedException.delete_all
-      redirect_back(fallback_location: root_path)
+      redirect_to :back
     end
 
     private

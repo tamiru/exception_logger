@@ -1,21 +1,11 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  exception_class: MyString
-  controller_name: MyString
-  action_name: MyString
-  message: MyText
-  backtrace: MyText
-  environment: MyText
-  request: MyText
-  created_at: 2024-03-30 15:23:11
-
-two:
-  exception_class: MyString
-  controller_name: MyString
-  action_name: MyString
-  message: MyText
-  backtrace: MyText
-  environment: MyText
-  request: MyText
-  created_at: 2024-03-30 15:23:11
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: {}
+# column: value
+#
+two: {}
+#  column: value
